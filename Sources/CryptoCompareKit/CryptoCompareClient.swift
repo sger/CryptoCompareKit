@@ -10,7 +10,7 @@ import Combine
 
 public struct CryptoCompareClient {
     
-    var topList: (Int, String) -> AnyPublisher<TopList, CryptoCompareError>
+    public var topList: (Int, String) -> AnyPublisher<TopList, CryptoCompareError>
     
     private static let decoder = JSONDecoder()
     private static let baseUrl: String = "https://www.cryptocompare.com"
