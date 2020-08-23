@@ -7,12 +7,16 @@
 
 import Foundation
 
-public struct TopListData: Decodable, Identifiable {
+public struct TopListData: Decodable, Identifiable, Equatable {
     
     public var id: UUID = UUID()
     public let coinInfo: CoinInfo?
     public let raw: Raw?
     public let display: Display?
+    
+    public static func == (lhs: TopListData, rhs: TopListData) -> Bool {
+        return lhs.coinInfo?.fullName == rhs.coinInfo?.fullName
+    }
 
     enum CodingKeys: String, CodingKey {
         case coinInfo = "CoinInfo"
