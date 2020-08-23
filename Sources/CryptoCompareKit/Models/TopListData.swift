@@ -11,8 +11,8 @@ public struct TopListData: Decodable, Identifiable, Equatable {
     
     public var id: UUID = UUID()
     public let coinInfo: CoinInfo?
-    public let raw: Raw?
-    public let display: Display?
+    public let raw: [String: Raw]
+    public let display: [String: Display]
     
     public static func == (lhs: TopListData, rhs: TopListData) -> Bool {
         return lhs.coinInfo?.fullName == rhs.coinInfo?.fullName
