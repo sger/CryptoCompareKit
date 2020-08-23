@@ -10,6 +10,8 @@ import Combine
 
 public struct CryptoCompareClient {
     
+    var topList: (Int, String) -> AnyPublisher<TopList, CryptoCompareError>
+    
     private static let decoder = JSONDecoder()
     private static let baseUrl: String = "https://www.cryptocompare.com"
     
@@ -24,7 +26,7 @@ public struct CryptoCompareClient {
         }
     }
 
-    public static func fetch<T: Codable>(endpoint: Endpoint) -> AnyPublisher<T ,CryptoCompareError> {
+    public static func fetch<T: Codable>(endpoint: Endpoint) -> AnyPublisher<T, CryptoCompareError> {
         let request = URLRequest(url: URL(string: "\(Self.baseUrl)\(endpoint.path())")!)
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { data, response in
@@ -35,3 +37,11 @@ public struct CryptoCompareClient {
         .eraseToAnyPublisher()
     }
 }
+
+extension CryptoCompareClient {
+    static let live = Self(
+        topList: { limit, tsym in
+            Self.fetch(endpoint: .topList(limit: limit, tsym: tsym))
+        }
+    )
+} 
