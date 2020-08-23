@@ -39,7 +39,7 @@ public struct CryptoCompareClient {
 }
 
 extension CryptoCompareClient {
-    static let live = Self(
+    public static let live = Self(
         topList: { limit, tsym in
             Self.fetch(endpoint: .topList(limit: limit, tsym: tsym))
         }
