@@ -7,12 +7,23 @@
 
 import Foundation
 
-public struct TopList: Codable {
-    public let message: String = ""
-    public let type: Int = 0
-    public let data: [TopListData] = []
-    public let hasWarning: Bool = false
+public struct TopList: Decodable {
+    
+    public let message: String
+    public let type: Int
+    public let data: [TopListData]
+    public let hasWarning: Bool
 
+    public init(message: String = "",
+                type: Int = 0,
+                data: [TopListData] = [],
+                hasWarning: Bool = false) {
+        self.message = message
+        self.type = type
+        self.data = data
+        self.hasWarning = hasWarning
+    }
+    
     enum CodingKeys: String, CodingKey {
         case message = "Message"
         case type = "Type"

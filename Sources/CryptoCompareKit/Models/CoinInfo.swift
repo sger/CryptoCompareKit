@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct CoinInfo: Codable {
+public struct CoinInfo: Decodable {
     public let id, name, fullName, coinInfoInternal: String
     public let imageURL, url, algorithm, proofType: String
     public let rating: Rating
@@ -36,11 +36,11 @@ public struct CoinInfo: Codable {
     }
 }
 
-public enum DocumentType: String, Codable {
+public enum DocumentType: String, Decodable {
     case webpagecoinp = "Webpagecoinp"
 }
 
-public struct Rating: Codable {
+public struct Rating: Decodable {
     public let weiss: Weiss
 
     enum CodingKeys: String, CodingKey {
@@ -48,7 +48,7 @@ public struct Rating: Codable {
     }
 }
 
-public struct Weiss: Codable {
+public struct Weiss: Decodable {
     public let rating, technologyAdoptionRating, marketPerformanceRating: String
 
     enum CodingKeys: String, CodingKey {

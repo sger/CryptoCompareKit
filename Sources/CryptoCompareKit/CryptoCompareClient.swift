@@ -26,7 +26,7 @@ public struct CryptoCompareClient {
         }
     }
 
-    public static func fetch<T: Codable>(endpoint: Endpoint) -> AnyPublisher<T, CryptoCompareError> {
+    public static func fetch<T: Decodable>(endpoint: Endpoint) -> AnyPublisher<T, CryptoCompareError> {
         let request = URLRequest(url: URL(string: "\(Self.baseUrl)\(endpoint.path())")!)
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { data, response in

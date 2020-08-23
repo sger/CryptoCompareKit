@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Raw: Codable {
+public struct Raw: Decodable {
     public let TYPE: String?
     public let MARKET: String?
     public let FROMSYMBOL: String?

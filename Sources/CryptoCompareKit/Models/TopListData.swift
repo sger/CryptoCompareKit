@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct TopListData: Codable {
+public struct TopListData: Decodable {
     public let coinInfo: CoinInfo
     public let raw: Raw
     public let display: Display

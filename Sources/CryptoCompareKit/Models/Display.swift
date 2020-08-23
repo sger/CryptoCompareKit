@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Display: Codable {
+public struct Display: Decodable {
     public let FROMSYMBOL: String?
     public let TOSYMBOL: String?
     public let MARKET: String?
