@@ -33,7 +33,10 @@ public struct CryptoCompareClient {
                 return try CryptoCompareError.processResponse(data: data, response: response)
         }
         .decode(type: T.self, decoder: Self.decoder)
-        .mapError { CryptoCompareError.parseError(reason: $0.localizedDescription) }
+        .mapError {
+            print($0)
+            return CryptoCompareError.parseError(reason: $0.localizedDescription)
+        }
         .eraseToAnyPublisher()
     }
 }
