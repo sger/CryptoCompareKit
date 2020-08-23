@@ -13,7 +13,7 @@ public struct CryptoCompareClient {
     public var topList: (Int, String) -> AnyPublisher<TopList, CryptoCompareError>
     
     private static let decoder = JSONDecoder()
-    private static let baseUrl: String = "https://www.cryptocompare.com"
+    private static let baseUrl: String = "https://min-api.cryptocompare.com"
     
     public enum Endpoint {
         case topList(limit: Int, tsym: String)
