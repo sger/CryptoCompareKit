@@ -47,9 +47,34 @@ extension CryptoCompareClient {
             Self.fetch(endpoint: .topList(limit: limit, tsym: tsym))
         }
     )
-    public static let mock = Self { _, _ in
-        Just(TopList.mock)
-        .setFailureType(to: CryptoCompareError.self)
-        .eraseToAnyPublisher()
-    }
-} 
+    
+    public static let mock = Self(
+        topList: { _, _ in
+            Just(TopList.mock)
+            .setFailureType(to: CryptoCompareError.self)
+            .eraseToAnyPublisher()
+        }
+    )
+    
+    public static let failedWithReason = Self(
+        topList: { (_, _)  in
+            Fail(error: CryptoCompareError.message(reason: "Error"))
+                .eraseToAnyPublisher()
+        }
+    )
+    
+    public static let failedWithNetworkError = Self(
+        topList: { (_, _)  in
+            Fail(error: CryptoCompareError.networkError(reason: "Network Error"))
+                .eraseToAnyPublisher()
+        }
+    )
+    
+    public static let empty = Self(
+        topList: { (_, _) in
+            Just(TopList(message: "", type: 0, data: [], hasWarning: false))
+                .setFailureType(to: CryptoCompareError.self)
+                .eraseToAnyPublisher()
+        }
+    )
+}
