@@ -12,6 +12,8 @@ public struct CryptoCompareClient {
     
     public var topList: (Int, String) -> AnyPublisher<TopList, CryptoCompareError>
     
+    public static let baseImageUrl: String = "https://www.cryptocompare.com"
+    
     private static let decoder = JSONDecoder()
     private static let baseUrl: String = "https://min-api.cryptocompare.com"
     
