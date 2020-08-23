@@ -47,4 +47,9 @@ extension CryptoCompareClient {
             Self.fetch(endpoint: .topList(limit: limit, tsym: tsym))
         }
     )
+    public static let mock = Self { _, _ in
+        Just(TopList.mock)
+        .setFailureType(to: CryptoCompareError.self)
+        .eraseToAnyPublisher()
+    }
 } 
