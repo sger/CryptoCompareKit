@@ -7,7 +7,9 @@
 
 import Foundation
 
-public struct TopListData: Decodable {
+public struct TopListData: Decodable, Identifiable {
+    
+    public var id: UUID = UUID()
     public let coinInfo: CoinInfo
     public let raw: Raw
     public let display: Display
