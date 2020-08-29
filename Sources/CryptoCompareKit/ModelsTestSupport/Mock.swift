@@ -24,5 +24,5 @@ extension Raw {
 }
 
 extension Display {
-    public static let mock = Display(FROMSYMBOL: "", TOSYMBOL: "", MARKET: "", PRICE: "", LASTUPDATE: "", LASTVOLUME: "", LASTVOLUMETO: "", LASTTRADEID: "", VOLUMEDAY: "", VOLUMEDAYTO: "", VOLUME24HOUR: "", VOLUME24HOURTO: "", OPENDAY: "", HIGHDAY: "", LOWDAY: "", OPEN24HOUR: "", HIGH24HOUR: "", LOW24HOUR: "", LASTMARKET: "", CHANGE24HOUR: "", CHANGEPCT24HOUR: "", CHANGEDAY: "", CHANGEPCTDAY: "", SUPPLY: "", MKTCAP: "", TOTALVOLUME24H: "", TOTALVOLUME24HTO: "")
+    public static let mock = Display(fromSymbol: "", toSymbol: "", market: "", price: "", lastUpdate: "", lastVolume: "", lastVolumeTo: "", lastTradeId: "", volumeDay: "", volumeDayTo: "", volume24Hour: "", volume24HourTo: "", openDay: "", highDay: "", lowDay: "", open24Hour: "", high24Hour: "", low24Hour: "", lastMarket: "", change24Hour: "", changePct24Hour: "", changeDay: "", changePctDay: "", supply: "", mktcap: "", totalVolume24h: "", totalVolume24Hto: "")
 }
