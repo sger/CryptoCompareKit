@@ -20,7 +20,7 @@ extension TopList {
 }
 
 extension Raw {
-    public static let mock = Raw(TYPE: "", MARKET: "", FROMSYMBOL: "", TOSYMBOL: "", FLAGS: "", PRICE: 0, LASTUPDATE: 0, LASTVOLUME: 0, LASTVOLUMETO: 0, LASTTRADEID: "", VOLUMEDAY: 0, VOLUMEDAYTO: 0, VOLUME24HOUR: 0, VOLUME24HOURTO: 0, OPENDAY: 0, HIGHDAY: 0, LOWDAY: 0, OPEN24HOUR: 0, HIGH24HOUR: 0, LOW24HOUR: 0, LASTMARKET: "", CHANGE24HOUR: 0, CHANGEPCT24HOUR: 0, CHANGEDAY: 0, CHANGEPCTDAY: 0, SUPPLY: 0, MKTCAP: 0, TOTALVOLUME24H: 0, TOTALVOLUME24HTO: 0)
+    public static let mock = Raw(type: "", market: "", fromSymbol: "", toSymbol: "", flags: "", price: 0, lastUpdate: 0, lastVolume: 0, lastVolumeTo: 0, lastTradeId: "", volumeDay: 0, volumeDayTo: 0, volume24Hour: 0, volume24HourTo: 0, openDay: 0, highDay: 0, lowDay: 0, open24Hour: 0, high24Hour: 0, low24Hour: 0, lastMarket: "", change24Hour: 0, changePct24Hour: 0, changeDay: 0, changePctDay: 0, supply: 0, mktcap: 0, totalVolume24h: 0, totalVolume24Hto: 0)
 }
 
 extension Display {
