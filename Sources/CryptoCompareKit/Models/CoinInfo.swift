@@ -12,7 +12,8 @@ public struct CoinInfo: Decodable {
     public let imageURL, url, algorithm, proofType: String
     public let rating: Rating
     public let netHashesPerSecond: Double
-    public let blockNumber, blockTime: Int
+    public let blockNumber: Int
+    public let blockTime: Double
     public let blockReward: Double
     public let type: Int
     public let documentType: DocumentType
